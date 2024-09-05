@@ -11,15 +11,51 @@ p {
     line-height: 1.8;
     margin-bottom: 15px;
 }
+/* class hide - для того щоб ті секції, які в нас є готові були заховані, щоб ми могли працювати з певною секцією окремо*/
+/* також можна додати !important - для того щоб даний елемент 100% виконав свою дію */
+.hide {
+    display: none; 
+}
+.title-wrapper {
+    margin-bottom: 60px;
+}
+.title {
+    margin-bottom: 17px;
+
+    font-size: 30px;
+    line-height: 1.2;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #676770;
+}
+.subtitle {
+    font-size: 17px;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8E8E9C;
+}
 /*------------------------------- Стилізація шапки сайту------------------------------- */
 .header {
     padding: 20px 0;
-    width: 100%;
+    width: 100%; /*Якщо шапка сайту стиснеться, тоді даємо їй 100% ширини в даному батьківському блоці*/
 
-    position: sticky; /*Фіксую шапку - при прогортуванні вниз шапка залишається вверху*/
-    /* top: 0; */
-    /* left: 0; */
-    
+    position: fixed; /*Фіксую шапку (sticky- це прилипання) - при прогортуванні вниз шапка залишається вверху 
+    (залежить від батьківського елемента)*/
+    /* position: fixed;       Фіксую шапку (fixed- це постійне прилипання) - при прогортуванні вниз шапка залишається вверху
+    (не залежить від батьківського елемента)*/
+
+    /*Висновок:
+    Вибір залежить від того, як ви хочете, щоб елементи взаємодіяли з контентом і прокручуванням сторінки. 
+    Якщо вам потрібна постійна видимість — використовуйте fixed. 
+    Якщо ви хочете елемент, який буде видимим лише в певних умовах прокручування, але не завжди — обирайте sticky.*/
+
+    top: 0;   /*  Даємо конкретне місце прилипання */
+    left: 0; 
+    z-index: 100; /*Даємо z-index для того щоб шапка завжди була поверх інших елементів,
+    якщо будуть якісь інші з позиціоновані елементи вони можуть мішати шапці і 
+     шапка при прогортуванні буде ховатись за ними */
+
     background-color: #fff;
 }
 .header__container {
@@ -129,4 +165,72 @@ p {
 .link:active {
     background-color: rgba(0, 0, 0, 0.2);
     border-color: rgba(0, 0, 0, 0.5);
+}
+/* -----------------------------Стилізація section ABOUT (WHAT WE DO)--------------------------------*/
+.about {
+    text-align: center;
+}
+.common-section {
+    text-align: center;
+    /* внутрішні відступи для секції */
+    padding: 80px 0; 
+}
+.about .cards-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.about .card {
+    padding: 35px 15px 25px;
+    width: 300px;
+    border: 1px solid #DCEBF7;
+    border-radius: 5px;
+
+    transition: background-color 0.5s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+.about .card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
+}
+.about .card:hover::before {
+    left: 100%;
+}
+.about .card:hover {
+    background-color: #3498db;
+}
+.about .card img {
+    margin-bottom: 20px;
+
+    width: 94px;
+    height: 94px;
+    object-fit: contain;
+}
+.about .card h4 {
+    margin-bottom: 15px;
+
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: #676770;
+
+    transition: color 0.5s ease;/*час переходу */
+    
+}
+.about .card:hover h4 {
+    color: white;
+    transform: scale(1.03); /*заголовок збільшується у 0,3*/
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);/*підключення тіні*/
+}
+.about .card:hover p {
+    color: white;
+    transform: scale(1.03);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
