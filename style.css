@@ -35,7 +35,21 @@ p {
     text-transform: uppercase;
     color: #8E8E9C;
 }
-/*------------------------------- Стилізація шапки сайту------------------------------- */
+
+.common-section {
+    text-align: center;
+    padding: 80px 0;
+}
+.common-section--dark {
+    background-color: #192024;
+}
+.common-section--dark * {
+    color: white;
+}
+.common-section--dark  .subtitle {
+    color: #E8E8E8;
+}
+/*------------------------------- Стилізація шапки сайту HEADER------------------------------- */
 .header {
     padding: 20px 0;
     width: 100%; /*Якщо шапка сайту стиснеться, тоді даємо їй 100% ширини в даному батьківському блоці*/
@@ -57,6 +71,7 @@ p {
      шапка при прогортуванні буде ховатись за ними */
 
     background-color: #fff;
+    box-shadow: 0px 0px 16px rgba(5, 136, 207, 0.8);
 }
 .header__container {
     display: flex;
@@ -234,23 +249,30 @@ p {
     transform: scale(1.03);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
+/* ----------------------------------SERVICES (WHAT WE DO)------------------------------------------- */
 .services {
+
 }
-.common-section {
+.services .cards-wrapper {
+    display: flex;
+    justify-content: space-between;
+
 }
-.common-section--dark {
+.services .card {
+    width: 50%;
 }
-.container {
+.services .card img {
+    margin-bottom: 20px;
 }
-.title-wrapper {
+.services .card h4 {
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 7px;
+    text-transform: uppercase;
 }
-.title {
-}
-.subtitle {
-}
-.cards-wrapper {
-}
-.card {
-}
-.link {
+.services .link {
+    margin-top: 15px;
+
 }
