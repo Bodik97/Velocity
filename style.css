@@ -94,8 +94,8 @@ p {
 }
 /*------------------------------- Стилізація MAIN ------------------------------- */
 
-.main {
-}
+/* .main {
+} */
 /*------------------------------- Стилізація секції WELCOME ------------------------------- */
 
 .welcome {
@@ -233,4 +233,24 @@ p {
     color: white;
     transform: scale(1.03);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.services {
+}
+.common-section {
+}
+.common-section--dark {
+}
+.container {
+}
+.title-wrapper {
+}
+.title {
+}
+.subtitle {
+}
+.cards-wrapper {
+}
+.card {
+}
+.link {
 }
